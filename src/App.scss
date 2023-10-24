@@ -1,0 +1,51 @@
+@import "./assets/scss/variables";
+@import "./assets/scss/mixins";
+@import "./assets/scss/header";
+@import "./assets/scss/footer";
+
+.custom_container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.uk-navbar-nav {
+  gap: 0 !important;
+}
+
+body {
+  background: $white;
+  position: relative;
+  min-height: 100vh;
+  color: $siteColor;
+  font-family: $regular;
+  background: red;
+}
+
+a {
+  color: $siteColor;
+  transition: 0.3s;
+  outline: none !important;
+  text-decoration: none;
+  text-transform: none !important;
+  &:hover {
+    text-decoration: none !important;
+    opacity: 0.7;
+    outline: none !important;
+  }
+}
