@@ -3,15 +3,16 @@
 
 .page_header{
     position: relative;
-    padding-top: 32px;
+    transition:  0.3s transform;
+    transform: translateY(-100%);
     .header_container{
         display: flex;
         align-items: center;
         padding: 0 20px;
         background: $white;
         position: relative;
-        border-radius: 50px;
         height: 70px;
+        border-radius: 30px;
         &:before{
             content: '';
             display: block;
@@ -20,7 +21,7 @@
             left: -0.7em;
             width: calc(100% + 1.4em);
             height: calc(100% + 1.4em);
-            background: rgb(255 255 255 / 20%);
+            background: rgb($white ,  20%);
             z-index: -1;
             border-radius: 50px;
         }
@@ -43,14 +44,15 @@
     }
     .header_list{
         margin-left: auto;
-        padding-left: 40px;
         display: flex;
+        max-width: fit-content;
         width: 100%;
         align-items: center;
+        justify-content: space-between;
         position: relative;
         right: -20px;
         li{
-            margin-right: 50px;
+            margin-right: 40px;
         }
         a{
             font-size: 14px;
@@ -59,15 +61,46 @@
     .call_btn{
         min-width: 70px;
         height: 100%;
-        background: #c9175f;
+        background: $siteColor;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
-        right: -21px;
-        border-radius: 0 50px 50px 0;
+        right: -20px;
+        transition: 0s all;
+        border-radius: 0 33px 33px 0;
         svg{
             color: $white;
         }
     }
+    &.header_center_mode{
+        transform: translateY(0) !important;
+        padding-top: 32px;
+        .header_container{
+            border-radius: 50px;
+        }
+    }
+    &.header_inline_mode{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding-top: 0;
+        background: $white;
+        transform: translateY(0);
+        box-shadow: 0px 10px 20px 0px rgb(0 0 0 / 10%);
+        .header_container {
+            border-radius: 0px;
+            &:before {
+                opacity: 0;
+            }
+        }
+        .call_btn {
+            border-radius: 0;
+        }
+    }
+    &.header_inline_hide{
+        transform: translateY(-110%) !important;
+        box-shadow: none;
+    }
+   
 }
