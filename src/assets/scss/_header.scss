@@ -2,7 +2,10 @@
 @import "./mixins";
 
 .page_header{
-    position: relative;
+    position: absolute;
+    margin: 0 auto;
+    z-index: 10;
+    width: 100%;
     transition:  0.3s transform;
     transform: translateY(-100%);
     .header_container{

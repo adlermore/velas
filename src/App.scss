@@ -34,8 +34,8 @@ body {
   min-height: 100vh;
   color: $siteColor;
   font-family: $regular;
-  background: red;
   min-height: 300vh;
+  // overflow-x: hidden;
 }
 
 a {
