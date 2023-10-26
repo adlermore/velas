@@ -14,6 +14,10 @@
   margin: 0;
 }
 
+.main-content{
+  height: 400px;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -34,8 +38,10 @@ body {
   min-height: 100vh;
   color: $siteColor;
   font-family: $regular;
-  min-height: 300vh;
-  // overflow-x: hidden;
+  min-height: 100vh;
+  &.menu-opened{
+    overflow: hidden;
+  }
 }
 
 a {

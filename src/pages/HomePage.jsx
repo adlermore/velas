@@ -28,15 +28,26 @@ const HomePage = () => {
                             <source src={mainSliderVidio1} type="video/mp4" />
                         </video>
                     </div>
-                    <div className="slider_content"></div>
+                    <div className="slider_content">
+                        <div className="content_title"> Velas</div>
+                        <span className="content_label">Book today</span>
+                        <div className="content_description">Yacht Charters</div>
+                        <a href="/#" className='boock_btn'>boock now <span className='icon-right'></span></a>
+                    </div>
                 </div>
                 <div className='slider_container'>
                     <div className="slider_background">
                         <img src={mainSliderImg1} alt="main-slider" title='main-slider' />
                     </div>
-                    <div className="slider_content"></div>
+                    <div className="slider_content">
+                        <div className="content_title"> Velas</div>
+                        <span className="content_label">Book today</span>
+                        <div className="content_description">Yacht Charters</div>
+                        <a href="/#" className='boock_btn '>boock now <span className='icon-right'></span></a>
+                    </div>
                 </div>
             </Slider>
+            <div className="main-content"></div>
         </div>
     )
 }
