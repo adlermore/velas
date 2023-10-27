@@ -184,4 +184,27 @@
             }
         }
     }
+
+    @media (max-width: 1440px) {
+        .content_title {
+            font-size: 8rem;
+            top: -80px;
+        }
+        .content_label {
+            font-size: 18px;
+            line-height: 23px;
+        }
+        .content_description {
+            font-size: 54px;
+            line-height: 60px;
+            margin-top: 15px;
+        }
+        .slick-slider {
+            height: 660px;
+        }        
+        &:before {
+            height: 220px;
+            background-size: 130% 100%;
+        }
+    }
 }
