@@ -4,6 +4,7 @@ import { BiLogoFacebook } from 'react-icons/bi';
 import { BiLogoTwitter } from 'react-icons/bi';
 import { BiLogoInstagram } from 'react-icons/bi';
 import { BiLogoYoutube } from 'react-icons/bi';
+import '../../assets/scss/_footer.scss';
 
 const Footer = () => {
     return (

@@ -3,6 +3,8 @@ import mainLogo from '../../assets/img/logo_black.png';
 import { FaPhone } from 'react-icons/fa6';
 import { Twirl as Hamburger } from 'hamburger-react';
 import menuImg from '../../assets/img/cropped-favicon_02-300x300.png'
+import '../../assets/scss/_header.scss';
+
 
 const Header = () => {
 
