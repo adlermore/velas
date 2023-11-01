@@ -94,8 +94,6 @@
     content: "\e908";
 }
 
-
-
 @mixin standardList() {
     padding: 0;
     margin: 0;
@@ -232,12 +230,10 @@
     justify-content: center;
 }
 
-
 @mixin hoverEffect {
     transition: 0.3s;
     opacity: 1;
     color: $red !important;
-
     &:hover {
         opacity: 0.5;
     }
