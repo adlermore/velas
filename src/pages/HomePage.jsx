@@ -7,6 +7,12 @@ import Slider from "react-slick";
 import mainSliderImg1 from '../assets/img/home-slider.jpg';
 import mainSliderVidio1 from '../assets/video/slider-video.mp4';
 import wolfImg from '../assets/img/image_shape_01.jpg';
+import gallery1 from '../assets/img/gallery_01.jpg';
+import gallery2 from '../assets/img/gallery_02.jpg';
+import gallery3 from '../assets/img/gallery_03.jpg';
+import gallery4 from '../assets/img/gallery_04.jpg';
+import gallery5 from '../assets/img/gallery_05.jpg';
+import gallery6 from '../assets/img/gallery_06.jpg';
 import onboardImg from '../assets/img/image_shape_02.jpg';
 import { FiAnchor } from 'react-icons/fi';
 import { FiUsers } from 'react-icons/fi';
@@ -18,6 +24,10 @@ import { FaRegListAlt } from 'react-icons/fa';
 import { FaOilCan } from 'react-icons/fa';
 import { BsCheckLg } from 'react-icons/bs';
 import { BsFillBookmarkFill } from 'react-icons/bs';
+import { BsSearch } from 'react-icons/bs';
+import { Fancybox as NativeFancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
 
 const HomePage = () => {
 
@@ -25,7 +35,7 @@ const HomePage = () => {
 
     const porstRef = useRef(null);
     const videoRef = useRef(null);
-
+    
     const handleScroll = () => {
         if (window.innerWidth > 991) {
             if (window.scrollY >= porstRef.current.offsetTop - 400 && window.scrollY <= porstRef.current.offsetTop) {
@@ -40,6 +50,26 @@ const HomePage = () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    function Fancybox(props) {
+        const containerRef = useRef(null);
+
+        useEffect(() => {
+            const container = containerRef.current;
+
+            const delegate = props.delegate || "[data-fancybox]";
+            const options = props.options || {};
+
+            NativeFancybox.bind(container, delegate, options);
+
+            return () => {
+                NativeFancybox.unbind(container);
+                NativeFancybox.close();
+            };
+        });
+
+        return <div ref={containerRef}>{props.children}</div>;
+    }
 
     const settings = {
         fade: true,
@@ -236,38 +266,79 @@ const HomePage = () => {
                     </div>
                     <ul className="calendar_list">
                         <li>
-                            <div className='flag-wrapper'><BsFillBookmarkFill />03 JUN</div>
+                            <div className='flag-wrapper'><BsFillBookmarkFill /><span>03</span>JUN</div>
                             <div className="block_info">
                                 <div className="block_title">Sami, Kefalonia Booked</div>
-                                <div className="block_price">€ 7.980</div>
-                                <div className="block_date">03.06. - 10.06.2023</div>
                             </div>
                         </li>
                         <li>
-                            <div className='flag-wrapper'><BsFillBookmarkFill />10 JUN </div>
+                            <div className='flag-wrapper'><BsFillBookmarkFill /><span>10</span>JUN </div>
                             <div className="block_info">
-                                <div className="block_title"></div>
+                                <div className="block_title">Sami, Kefalonia</div>
                                 <div className="block_price">€ 6500</div>
                                 <div className="block_date">03.06. - 09.03.2023</div>
                             </div>
                         </li>
                         <li>
-                            <div className='flag-wrapper'><BsFillBookmarkFill />17 JUN </div>
+                            <div className='flag-wrapper'><BsFillBookmarkFill /><span>17</span>JUN </div>
                             <div className="block_info">
-                                <div className="block_title"></div>
-                                <div className="block_price">€ 6.950</div>
+                                <div className="block_title">Sami, Kefalonia</div>
+                                <div className="block_price">€ 6.950 <span>-22%</span></div>
                                 <div className="block_date">03.05. - 10.11.2023</div>
                             </div>
                         </li>
                         <li>
-                            <div className='flag-wrapper'><BsFillBookmarkFill />24 JUN </div>
+                            <div className='flag-wrapper'><BsFillBookmarkFill /><span>24</span>JUN </div>
                             <div className="block_info">
-                                <div className="block_title"></div>
-                                <div className="block_price">€ 8.100</div>
+                                <div className="block_title">Sami, Kefalonia</div>
+                                <div className="block_price">€ 8.100 <span>-22%</span> </div>
                                 <div className="block_date">03.06. - 10.08.2023</div>
                             </div>
                         </li>
                     </ul>
+                </div>
+            </div>
+            <div className="gallery_section">
+                <div className="custom_container">
+                    <div className="title_wrapper center_mode">
+                        <div className="section_title">TAKE A LOOK</div>
+                        <div className="main_title">Sea Wolf Gallery</div>
+                        <div className="background_title">Gallery</div>
+                    </div>
+                    <Fancybox
+                        options={{
+                            Carousel: {
+                                infinite: false,
+                            },
+                        }}
+                    >
+                        <ul className="gallery_list">
+                            <li href={gallery1} data-fancybox="gallery">
+                                <BsSearch />
+                                <img src={gallery1} alt="gallery-img" />
+                            </li>
+                            <li href={gallery2} data-fancybox="gallery">
+                                <BsSearch />
+                                <img src={gallery2} alt="gallery-img" />
+                            </li>
+                            <li href={gallery3} data-fancybox="gallery">
+                                <BsSearch />
+                                <img src={gallery3} alt="gallery-img" />
+                            </li>
+                            <li href={gallery4} data-fancybox="gallery">
+                                <BsSearch />
+                                <img src={gallery4} alt="gallery-img" />
+                            </li >
+                            <li href={gallery5} data-fancybox="gallery">
+                                <BsSearch />
+                                <img src={gallery5} alt="gallery-img" />
+                            </li >
+                            <li href={gallery6} data-fancybox="gallery">
+                                <BsSearch />
+                                <img src={gallery6} alt="gallery-img" />
+                            </li>
+                        </ul>
+                    </Fancybox>
                 </div>
             </div>
         </div>
