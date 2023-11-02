@@ -35,7 +35,7 @@ const HomePage = () => {
 
     const porstRef = useRef(null);
     const videoRef = useRef(null);
-    
+
     const handleScroll = () => {
         if (window.innerWidth > 991) {
             if (window.scrollY >= porstRef.current.offsetTop - 400 && window.scrollY <= porstRef.current.offsetTop) {
