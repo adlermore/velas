@@ -13,7 +13,10 @@ import gallery3 from '../assets/img/gallery_03.jpg';
 import gallery4 from '../assets/img/gallery_04.jpg';
 import gallery5 from '../assets/img/gallery_05.jpg';
 import gallery6 from '../assets/img/gallery_06.jpg';
+import bgInner from '../assets/img/bg_inner.jpg';
 import onboardImg from '../assets/img/image_shape_02.jpg';
+import travelImg1 from '../assets/img/Group01.png';
+import travelImg2 from '../assets/img/Group02.png';
 import { FiAnchor } from 'react-icons/fi';
 import { FiUsers } from 'react-icons/fi';
 import { PiUsersThreeBold } from 'react-icons/pi';
@@ -24,7 +27,10 @@ import { FaRegListAlt } from 'react-icons/fa';
 import { FaOilCan } from 'react-icons/fa';
 import { BsCheckLg } from 'react-icons/bs';
 import { BsFillBookmarkFill } from 'react-icons/bs';
+import { BiSolidQuoteAltRight } from 'react-icons/bi';
+import { MdStarRate } from 'react-icons/md';
 import { BsSearch } from 'react-icons/bs';
+import { FaPhone } from 'react-icons/fa6';
 import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
@@ -35,11 +41,15 @@ const HomePage = () => {
 
     const porstRef = useRef(null);
     const videoRef = useRef(null);
+    const callRef = useRef(null);
 
     const handleScroll = () => {
         if (window.innerWidth > 991) {
             if (window.scrollY >= porstRef.current.offsetTop - 400 && window.scrollY <= porstRef.current.offsetTop) {
                 setanimeLine((window.scrollY - 2100) / 8)
+            }
+            if (window.scrollY >= callRef.current.offsetTop - 800 && window.scrollY - 300 <= callRef.current.offsetTop) {
+                setanimeLine((window.scrollY - 5000) / 10)
             }
         }
     };
@@ -79,34 +89,64 @@ const HomePage = () => {
         slidesToScroll: 1
     };
 
+    const settingsReviews = {
+        infinite: false,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        dots: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1.2,
+                }
+            }
+        ]
+    };
+
     return (
         <div className='home-wrapper'>
-            <Slider {...settings}>
-                <div className='slider_container'>
-                    <div className="slider_background">
-                        <video ref={videoRef} className="video_inner_container" width="100%" height="100%" autoPlay muted loop>
-                            <source src={mainSliderVidio1} type="video/mp4" />
-                        </video>
+            <div className="main_slider">
+                <Slider {...settings}>
+                    <div className='slider_container'>
+                        <div className="slider_background">
+                            <video ref={videoRef} className="video_inner_container" width="100%" height="100%" autoPlay muted loop>
+                                <source src={mainSliderVidio1} type="video/mp4" />
+                            </video>
+                        </div>
+                        <div className="slider_content">
+                            <div className="content_title"> Velas</div>
+                            <span className="content_label">Book today</span>
+                            <div className="content_description">Yacht Charters</div>
+                            <a href="/#" className='boock_btn'>boock now <span className='icon-right'></span></a>
+                        </div>
                     </div>
-                    <div className="slider_content">
-                        <div className="content_title"> Velas</div>
-                        <span className="content_label">Book today</span>
-                        <div className="content_description">Yacht Charters</div>
-                        <a href="/#" className='boock_btn'>boock now <span className='icon-right'></span></a>
+                    <div className='slider_container'>
+                        <div className="slider_background">
+                            <img src={mainSliderImg1} alt="main-slider" title='main-slider' />
+                        </div>
+                        <div className="slider_content">
+                            <div className="content_title"> Velas</div>
+                            <span className="content_label">Book today</span>
+                            <div className="content_description">Yacht Charters</div>
+                            <a href="/#" className='boock_btn '>boock now <span className='icon-right'></span></a>
+                        </div>
                     </div>
-                </div>
-                <div className='slider_container'>
-                    <div className="slider_background">
-                        <img src={mainSliderImg1} alt="main-slider" title='main-slider' />
-                    </div>
-                    <div className="slider_content">
-                        <div className="content_title"> Velas</div>
-                        <span className="content_label">Book today</span>
-                        <div className="content_description">Yacht Charters</div>
-                        <a href="/#" className='boock_btn '>boock now <span className='icon-right'></span></a>
-                    </div>
-                </div>
-            </Slider>
+                </Slider>
+            </div>
             <div className="book_section">
                 <div className="custom_container">
                     <div className="title_wrapper center_mode">
@@ -339,6 +379,301 @@ const HomePage = () => {
                             </li>
                         </ul>
                     </Fancybox>
+                </div>
+            </div>
+            <div className="reviews_section">
+                <div className="custom_container">
+                    <div className="title_wrapper center_mode">
+                        <div className="section_title">VELAS EXPERIENCE</div>
+                        <div className="main_title">What Our Customers Say</div>
+                        <div className="background_title">reviews</div>
+                    </div>
+                    <div className="reviews_slider">
+                        <Slider {...settingsReviews}>
+                            <div className='reviews_block'>
+                                <div className="review_inner">
+                                    <div className="icon_block">
+                                        <BsFillBookmarkFill />
+                                        <span className='quote'>
+                                            <BiSolidQuoteAltRight />
+                                        </span>
+                                    </div>
+                                    <div className="quote_name">
+                                        Very reliable
+                                    </div>
+                                    <div className="rate_inline">
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                    </div>
+                                    <div className="description">
+                                        Very reliable, good service and advice, clear processing
+                                        via the customer portal.
+                                    </div>
+                                    <div className="user_name">
+                                        Urlich Distelkamp
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='reviews_block'>
+                                <div className="review_inner">
+                                    <div className="icon_block">
+                                        <BsFillBookmarkFill />
+                                        <span className='quote'>
+                                            <BiSolidQuoteAltRight />
+                                        </span>
+                                    </div>
+                                    <div className="quote_name">
+                                        It cannot be better
+                                    </div>
+                                    <div className="rate_inline">
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                    </div>
+                                    <div className="description">
+                                        Great service. We had a great holiday! Many thanks to Mario, the greatest skipper.
+                                    </div>
+                                    <div className="user_name">
+                                        Frank Reinboth
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='reviews_block'>
+                                <div className="review_inner">
+                                    <div className="icon_block">
+                                        <BsFillBookmarkFill />
+                                        <span className='quote'>
+                                            <BiSolidQuoteAltRight />
+                                        </span>
+                                    </div>
+                                    <div className="quote_name">
+                                        Very good support
+                                    </div>
+                                    <div className="rate_inline">
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                    </div>
+                                    <div className="description">
+                                        Excellent support when choosing the charter area and organizing a suitable ship.
+                                    </div>
+                                    <div className="user_name">
+                                        Marc Sellac
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='reviews_block'>
+                                <div className="review_inner">
+                                    <div className="icon_block">
+                                        <BsFillBookmarkFill />
+                                        <span className='quote'>
+                                            <BiSolidQuoteAltRight />
+                                        </span>
+                                    </div>
+                                    <div className="quote_name">
+                                        Reliable as always
+                                    </div>
+                                    <div className="rate_inline">
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                    </div>
+                                    <div className="description">
+                                        As always, I received excellent advice. I have booked boats
+                                        with Velas for years.
+                                    </div>
+                                    <div className="user_name">
+                                        Franz Zimmerman
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='reviews_block'>
+                                <div className="review_inner">
+                                    <div className="icon_block">
+                                        <BsFillBookmarkFill />
+                                        <span className='quote'>
+                                            <BiSolidQuoteAltRight />
+                                        </span>
+                                    </div>
+                                    <div className="quote_name">
+                                        Reliable as always
+                                    </div>
+                                    <div className="rate_inline">
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                    </div>
+                                    <div className="description">
+                                        As always, I received excellent advice. I have booked boats
+                                        with Velas for years.
+                                    </div>
+                                    <div className="user_name">
+                                        Franz Zimmerman
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='reviews_block'>
+                                <div className="review_inner">
+                                    <div className="icon_block">
+                                        <BsFillBookmarkFill />
+                                        <span className='quote'>
+                                            <BiSolidQuoteAltRight />
+                                        </span>
+                                    </div>
+                                    <div className="quote_name">
+                                        It cannot be better
+                                    </div>
+                                    <div className="rate_inline">
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                    </div>
+                                    <div className="description">
+                                        Great service. We had a great holiday! Many thanks to Mario, the greatest skipper.
+                                    </div>
+                                    <div className="user_name">
+                                        Frank Reinboth
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='reviews_block'>
+                                <div className="review_inner">
+                                    <div className="icon_block">
+                                        <BsFillBookmarkFill />
+                                        <span className='quote'>
+                                            <BiSolidQuoteAltRight />
+                                        </span>
+                                    </div>
+                                    <div className="quote_name">
+                                        Very good support
+                                    </div>
+                                    <div className="rate_inline">
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                    </div>
+                                    <div className="description">
+                                        Excellent support when choosing the charter area and organizing a suitable ship.
+                                    </div>
+                                    <div className="user_name">
+                                        Marc Sellac
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='reviews_block'>
+                                <div className="review_inner">
+                                    <div className="icon_block">
+                                        <BsFillBookmarkFill />
+                                        <span className='quote'>
+                                            <BiSolidQuoteAltRight />
+                                        </span>
+                                    </div>
+                                    <div className="quote_name">
+                                        It cannot be better
+                                    </div>
+                                    <div className="rate_inline">
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                        <MdStarRate />
+                                    </div>
+                                    <div className="description">
+                                        Great service. We had a great holiday! Many thanks to Mario, the greatest skipper.
+                                    </div>
+                                    <div className="user_name">
+                                        Frank Reinboth
+                                    </div>
+                                </div>
+                            </div>
+                        </Slider>
+                    </div>
+                </div>
+            </div>
+            <div className="call_section" ref={callRef}>
+                <div className="inner_bg">
+                    <img src={bgInner} alt="bg-inner" style={{ transform: `translateY(-${animeLine}px)` }} />
+                </div>
+                <div className="custom_container">
+                    <div className="title_wrapper center_mode">
+                        <div className="section_title">CONTACT US</div>
+                        <div className="main_title">Call Our Experts</div>
+                        <div className="main_description">Discuss your charter questions with a Vacation Planner today!</div>
+                        <div className="background_title">CONTACT</div>
+                    </div>
+                    <a href="/#" className="call_inline">
+                        <span className="call_icon"><FaPhone /></span>
+                        <span className='number-span'>+44(0)2380457733</span>
+                    </a>
+                </div>
+            </div>
+            <div className="travel_section">
+                <div className="custom_container">
+                    <div className="title_wrapper center_mode">
+                        <div className="section_title">BOOK TODAY</div>
+                        <div className="main_title">Travel Itinerary</div>
+                        <div className="background_title">Velas</div>
+                    </div>
+                    <div className="travel_line_container">
+                        <div className="left_block">
+                            <div className="travel_image">
+                                <img src={travelImg1} alt="travelImg" />
+                            </div>
+                            <div className="travel_image bottom-mode">
+                                <img src={travelImg2} alt="travelImg" />
+                            </div>
+                        </div>
+                        <div className="right_block">
+                            <div className="day_circle">Day<span>1</span></div>
+                            <div className="info_container">
+                                <div className="info_title">
+                                    From Sami to Ithaca
+                                </div>
+                                <div className="info_description">
+                                    Book a private yacht in paradise with the world’s premier yacht charter company. Travel with confidence.
+                                    <br />
+                                    <br />
+                                    Departure: 09:00 AM
+                                    <br />
+                                    <br />
+                                    Distance: 40nm
+                                    <br />
+                                    <br />
+                                    Arrival: 12:00 AM
+                               </div>
+                            </div>
+                            <div className="day_circle day-two">Day<span>2</span></div>
+                            <div className="info_container top-mode">
+                            <div className="info_title">
+                                    Beautiful Beaches
+                                </div>
+                                <div className="info_description">
+                                After an exciting first day, we are sure that you and your guests will want to spend some quality time in peace and serenity. Explore the latest motor yachts.
+                                    <br />
+                                    <br />
+                                    Distance: 60nm
+                                    <br />
+                                    <br />
+                                    Hidden beaches
+                               </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
