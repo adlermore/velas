@@ -14,6 +14,7 @@ import gallery4 from '../assets/img/gallery_04.jpg';
 import gallery5 from '../assets/img/gallery_05.jpg';
 import gallery6 from '../assets/img/gallery_06.jpg';
 import bgInner from '../assets/img/bg_inner.jpg';
+import contactImg from '../assets/img/image_contact.jpg';
 import onboardImg from '../assets/img/image_shape_02.jpg';
 import travelImg1 from '../assets/img/Group01.png';
 import travelImg2 from '../assets/img/Group02.png';
@@ -30,14 +31,35 @@ import { BsFillBookmarkFill } from 'react-icons/bs';
 import { BiSolidQuoteAltRight } from 'react-icons/bi';
 import { MdStarRate } from 'react-icons/md';
 import { BsSearch } from 'react-icons/bs';
+import { BiEditAlt } from 'react-icons/bi';
 import { FaPhone } from 'react-icons/fa6';
 import { Fancybox as NativeFancybox } from "@fancyapps/ui";
+import { BiLogoFacebook } from 'react-icons/bi';
+import { BiLogoTwitter } from 'react-icons/bi';
+import { BiLogoInstagram } from 'react-icons/bi';
+import { BiAnchor } from 'react-icons/bi';
+import { MdModeOfTravel } from 'react-icons/md';
+import { RiShip2Line } from 'react-icons/ri';
+import { GiShipWheel } from 'react-icons/gi';
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import Select from 'react-select';
+import { useForm, Controller } from "react-hook-form";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
+const SellectOption = [
+    { value: '1', label: '1' },
+    { value: '2', label: '2' },
+    { value: '3', label: '3' },
+    { value: '4', label: '4' },
+    { value: '5', label: '5' },
+    { value: '6', label: '6' },
+];
 
 const HomePage = () => {
 
     const [animeLine, setanimeLine] = useState(0);
+    const [startDate, setStartDate] = useState(new Date());
 
     const porstRef = useRef(null);
     const videoRef = useRef(null);
@@ -61,6 +83,11 @@ const HomePage = () => {
         };
     }, []);
 
+    const { register, handleSubmit, control, formState: { errors } } = useForm({
+        shouldFocusError: false,
+    });
+
+
     function Fancybox(props) {
         const containerRef = useRef(null);
 
@@ -80,6 +107,10 @@ const HomePage = () => {
 
         return <div ref={containerRef}>{props.children}</div>;
     }
+
+    const onSubmit = () => {
+        console.log('success !');
+    };
 
     const settings = {
         fade: true,
@@ -655,22 +686,140 @@ const HomePage = () => {
                                     <br />
                                     <br />
                                     Arrival: 12:00 AM
-                               </div>
+                                </div>
                             </div>
                             <div className="day_circle day-two">Day<span>2</span></div>
                             <div className="info_container top-mode">
-                            <div className="info_title">
+                                <div className="info_title">
                                     Beautiful Beaches
                                 </div>
                                 <div className="info_description">
-                                After an exciting first day, we are sure that you and your guests will want to spend some quality time in peace and serenity. Explore the latest motor yachts.
+                                    After an exciting first day, we are sure that you and your guests will want to spend some quality time in peace and serenity. Explore the latest motor yachts.
                                     <br />
                                     <br />
                                     Distance: 60nm
                                     <br />
                                     <br />
                                     Hidden beaches
-                               </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="contacts_section">
+                <div className="custom_container">
+                    <div className="contacts_inline">
+                        <div className="contacts_inner">
+                            <div className="title_wrapper">
+                                <div className="section_title">GET IN TOUCH</div>
+                                <div className="main_title">Interested in this yacht?</div>
+                                <div className="background_title">CONTACT</div>
+                            </div>
+                            <div className="contacts_form">
+                                <form onSubmit={handleSubmit(onSubmit)}>
+                                    <div className={errors?.user_name?.type === "required" ? "form-block  has-error" : "form-block"}  >
+                                        <input placeholder="First Name*" className="form-control" name="user_name" {...register("user_name", { required: true })} />
+                                        <p className="error-info" >This field is required</p>
+                                    </div>
+                                    <div className={errors?.user_surname?.type === "required" ? "form-block has-error" : "form-block"}  >
+                                        <input placeholder="Last Name*" className="form-control" name="user_surname" {...register("user_surname", { required: true })} />
+                                        <p className="error-info" >This field is required</p>
+                                    </div>
+                                    <div className={errors?.user_email?.type === "required" || errors?.user_email?.type === "pattern" ? "mail_inline form-block has-error" : "mail_inline form-block"}  >
+                                        <input placeholder="Email" className="form-control" name="user_email" {...register("user_email", { required: true, pattern: /^\S+@\S+$/i })} />
+                                        {errors?.user_email?.type === "pattern" ? <p className="error-info email-info" >invalid Email</p> :
+                                            <p className="error-info" >This field is required</p>}
+                                    </div>
+                                    <div className={errors?.phone_number?.type === "required" ? "form-block has-error" : "form-block"}  >
+                                        <input type="number" placeholder="Phone Number" className="form-control" name="phone_number" {...register("phone_number", { required: true })} />
+                                        <p className="error-info" >This field is required</p>
+                                    </div>
+                                    <div className='form-block' >
+                                        <DatePicker
+                                            showIcon
+                                            selected={startDate}
+                                            onChange={(date) => setStartDate(date)}
+                                        />
+                                    </div>
+                                    <div className={errors?.number?.type === "required" ? "form-block sellect_section has-error" : "form-block"}  >
+                                        <Controller
+                                            name="number"
+                                            control={control}
+                                            rules={{ required: 'Number of guests*' }}
+                                            render={({ field }) => (
+                                                <Select
+                                                    className=" register_sellect"
+                                                    options={SellectOption}
+                                                    placeholder="Number of guests*"
+                                                    {...field}
+                                                />
+                                            )}
+                                        />
+                                        <p className="error-info" >This field is required</p>
+                                    </div>
+                                    <div className={errors?.comment?.type === "required" ? "form-block textarea-block  has-error" : " textarea-block form-block"}  >
+                                        <textarea name="comment" placeholder="Message" className="form-control textarea_input"   {...register("comment", { required: true })} />
+                                        <p className="error-info" >This field is required</p>
+                                    </div>
+                                    <button type='submit' className="site_btn send-btn">send <span className='icon-right'></span></button>
+                                </form>
+                            </div>
+                        </div>
+                        <div className="contact_article">
+                            <div className="contact_container">
+                                <div className="contact_img">
+                                    <img src={contactImg} alt="contact-img" />
+                                </div>
+                                <div className="contact_info">
+                                    <div className="inner_desc">
+                                        YOUR CAPTAIN
+                                    </div>
+                                    <div className="contact_name">
+                                        Lucas Seamore
+                                    </div>
+                                    <div className="contact_number">
+                                        <FaPhone />  + 33 489 039 464
+                                    </div>
+                                    <div className="contact_mail">
+                                        <BiEditAlt /> info@velasyachting.com
+                                    </div>
+                                    <ul className="contact_socilal_list">
+                                        <li><a href="/#"><BiLogoFacebook /></a></li>
+                                        <li><a href="/#"><BiLogoTwitter /></a></li>
+                                        <li><a href="/#"><BiLogoInstagram /></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="analytic_inline">
+                        <div className="analytic_block">
+                            <BiAnchor />
+                            <div className="info">
+                                <div className="number"> 15</div>
+                                <div className="desc">YEARS IN BUSINESS</div>
+                            </div>
+                        </div>
+                        <div className="analytic_block">
+                            <MdModeOfTravel />
+                            <div className="info">
+                                <div className="number"> 12+</div>
+                                <div className="desc">TRAVEL ROUTES</div>
+                            </div>
+                        </div>
+                        <div className="analytic_block">
+                            <RiShip2Line />
+                            <div className="info">
+                                <div className="number">02</div>
+                                <div className="desc">STARTING LOCATIONS</div>
+                            </div>
+                        </div>
+                        <div className="analytic_block">
+                            <GiShipWheel />
+                            <div className="info">
+                                <div className="number"> 06</div>
+                                <div className="desc">CERTIFIED SKIPPERS</div>
                             </div>
                         </div>
                     </div>
