@@ -14,6 +14,9 @@ import gallery4 from '../assets/img/gallery_04.jpg';
 import gallery5 from '../assets/img/gallery_05.jpg';
 import gallery6 from '../assets/img/gallery_06.jpg';
 import bgInner from '../assets/img/bg_inner.jpg';
+import fleetImg1 from '../assets/img/card_image_01.jpg';
+import fleetImg2 from '../assets/img/card_image_02.jpg';
+import fleetImg3 from '../assets/img/card_image_03.jpg';
 import contactImg from '../assets/img/image_contact.jpg';
 import onboardImg from '../assets/img/image_shape_02.jpg';
 import travelImg1 from '../assets/img/Group01.png';
@@ -823,6 +826,143 @@ const HomePage = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="fleet_section">
+                <div className="custom_container">
+                    <div className="title_wrapper center_mode">
+                        <div className="section_title">OUR FLEET</div>
+                        <div className="main_title">Related Yachts</div>
+                        <div className="background_title">discover</div>
+                    </div>
+                    <ul className="fleet_list">
+                        <li>
+                            <div className="fleet_block">
+                                <div className="images_block">
+                                    <img src={fleetImg1} alt="fleet-img" />
+                                    <div className="icon_block">
+                                        <BsFillBookmarkFill />
+                                        <span className='quote'>
+                                            <GiShipWheel />
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="fleet_inner">
+                                    <div className="block_title">Sea Lagoon</div>
+                                    <ul className="props_list">
+                                        <li>
+                                            <FiAnchor />
+                                            <span className="inner_title">Marina</span>
+                                            <span className="right_title">Skiathos</span>
+                                        </li>
+                                        <li>
+                                            <FaRegListAlt />
+                                            <span className="inner_title">Boat type</span>
+                                            <span className="right_title">Catamaran</span>
+                                        </li>
+                                        <li>
+                                            <AiOutlineCalendar />
+                                            <span className="inner_title">Cabin beds</span>
+                                            <span className="right_title">4</span>
+                                        </li>
+                                        <li>
+                                            <FiUsers />
+                                            <span className="inner_title">Guests</span>
+                                            <span className="right_title">8 - 10</span>
+                                        </li>
+                                    </ul>
+                                    <div className="price_inline">
+                                        <div className="price_block">$ 4.700,00</div>
+                                        <a href="#/" className="site_btn">yacht page<span className='icon-right'></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="fleet_block">
+                                <div className="images_block">
+                                    <img src={fleetImg2} alt="fleet-img" />
+                                    <div className="icon_block">
+                                        <BsFillBookmarkFill />
+                                        <span className='quote'>
+                                            <MdModeOfTravel />
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="fleet_inner">
+                                    <div className="block_title">Sea Wolf</div>
+                                    <ul className="props_list">
+                                        <li>
+                                            <FiAnchor />
+                                            <span className="inner_title">Marina</span>
+                                            <span className="right_title">Skiathos</span>
+                                        </li>
+                                        <li>
+                                            <FaRegListAlt />
+                                            <span className="inner_title">Boat type</span>
+                                            <span className="right_title">Monohull</span>
+                                        </li>
+                                        <li>
+                                            <AiOutlineCalendar />
+                                            <span className="inner_title">Cabin beds</span>
+                                            <span className="right_title">6</span>
+                                        </li>
+                                        <li>
+                                            <FiUsers />
+                                            <span className="inner_title">Guests</span>
+                                            <span className="right_title">10 - 12</span>
+                                        </li>
+                                    </ul>
+                                    <div className="price_inline">
+                                        <div className="price_block">$ 3.840,00</div>
+                                        <a href="#/" className="site_btn">yacht page<span className='icon-right'></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="fleet_block">
+                                <div className="images_block">
+                                    <img src={fleetImg3} alt="fleet-img" />
+                                    <div className="icon_block">
+                                        <BsFillBookmarkFill />
+                                        <span className='quote'>
+                                            <BiAnchor />
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="fleet_inner">
+                                    <div className="block_title">White Pearl</div>
+                                    <ul className="props_list">
+                                        <li>
+                                            <FiAnchor />
+                                            <span className="inner_title">Marina</span>
+                                            <span className="right_title">Skiathos</span>
+                                        </li>
+                                        <li>
+                                            <FaRegListAlt />
+                                            <span className="inner_title">Boat type</span>
+                                            <span className="right_title">Catamaran</span>
+                                        </li>
+                                        <li>
+                                            <AiOutlineCalendar />
+                                            <span className="inner_title">Cabin beds</span>
+                                            <span className="right_title">6</span>
+                                        </li>
+                                        <li>
+                                            <FiUsers />
+                                            <span className="inner_title">Guests</span>
+                                            <span className="right_title">8 - 10</span>
+                                        </li>
+                                    </ul>
+                                    <div className="price_inline">
+                                        <div className="price_block">$ 6.300,00</div>
+                                        <a href="#/" className="site_btn">yacht page<span className='icon-right'></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
