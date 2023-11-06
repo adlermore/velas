@@ -38,7 +38,7 @@ body {
   color: $siteColor;
   font-family: $regular;
   min-height: 100vh;
-
+  touch-action: manipulation;
   &.menu-opened {
     overflow: hidden;
   }

@@ -686,7 +686,7 @@
 .reviews_section {
     margin-bottom: 60px;
     padding-bottom: 60px;
-
+    overflow: hidden;
     .reviews_slider {
         margin-top: 80px;
     }
@@ -735,6 +735,7 @@
         margin-top: 15px;
         font-size: 14px;
         color: $siteColor;
+        min-height: 85px;
     }
 
     .user_name {
@@ -1902,7 +1903,9 @@
         grid-template-columns: 1fr;
         gap: 20px;
     }
-
+    .reviews_section .review_inner {
+        min-height: 350px;
+    }
     .book_section {
         margin: 35px 0;
     }
