@@ -49,6 +49,7 @@ import Select from 'react-select';
 import { useForm, Controller } from "react-hook-form";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Link } from 'react-router-dom';
 
 const SellectOption = [
     { value: '1', label: '1' },
@@ -873,7 +874,7 @@ const HomePage = () => {
                                     </ul>
                                     <div className="price_inline">
                                         <div className="price_block">$ 4.700,00</div>
-                                        <a href="#/" className="site_btn">yacht page<span className='icon-right'></span></a>
+                                        <Link to="/eventPage/Lagoon" className="site_btn">yacht page<span className='icon-right'></span></Link>
                                     </div>
                                 </div>
                             </div>
@@ -915,7 +916,7 @@ const HomePage = () => {
                                     </ul>
                                     <div className="price_inline">
                                         <div className="price_block">$ 3.840,00</div>
-                                        <a href="#/" className="site_btn">yacht page<span className='icon-right'></span></a>
+                                        <Link to="/eventPage/Wolf" className="site_btn">yacht page<span className='icon-right'></span></Link>
                                     </div>
                                 </div>
                             </div>
@@ -957,7 +958,7 @@ const HomePage = () => {
                                     </ul>
                                     <div className="price_inline">
                                         <div className="price_block">$ 6.300,00</div>
-                                        <a href="#/" className="site_btn">yacht page<span className='icon-right'></span></a>
+                                        <Link to="/eventPage/Pearl" className="site_btn">yacht page<span className='icon-right'></span></Link>
                                     </div>
                                 </div>
                             </div>

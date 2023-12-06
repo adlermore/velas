@@ -4,6 +4,7 @@ import { FaPhone } from 'react-icons/fa6';
 import { Twirl as Hamburger } from 'hamburger-react';
 import menuImg from '../../assets/img/cropped-favicon_02-300x300.png'
 import '../../assets/scss/_header.scss';
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -66,7 +67,7 @@ const Header = () => {
                 <div className="custom_container">
                     <div className="header_container">
                         <div className="main_logo">
-                            <a href="/#"><img src={mainLogo} alt="main-logo" title="main-logo" /></a>
+                            <Link to="/"><img src={mainLogo} alt="main-logo" title="main-logo" /></Link>
                         </div>
                         <Hamburger toggled={isOpen} toggle={menuOpen} />
                         <div className="menu_container">

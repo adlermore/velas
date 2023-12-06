@@ -217,6 +217,34 @@
     }
 }
 
+.event_hero{
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    .custom_container {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        justify-content: center;
+        .title_wrapper{
+            z-index: 9;
+        }
+        .background_title{
+            color: rgba($white, 0.1);
+            font-size: 160px;
+        }
+        .main_title {
+            color: $white;
+            opacity: 0.6;
+        }
+        .main_description{
+            color: $white;
+            opacity: 0.9;
+        }
+    }
+}
+
 .book_section {
     margin: 70px 0;
 
@@ -1897,6 +1925,9 @@
 }
 
 @media (max-width: 575px) {
+    .event_hero {
+        height: 300px;
+    }
     .book_section .book_inline {
         margin-top: 35px;
         display: grid;
