@@ -50,6 +50,8 @@ import { useForm, Controller } from "react-hook-form";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from 'react-router-dom';
+import Wave from 'react-wavify';
+
 
 const SellectOption = [
     { value: '1', label: '1' },
@@ -181,6 +183,32 @@ const HomePage = () => {
                         </div>
                     </div>
                 </Slider>
+                <div className="wave_block">
+                    <Wave fill='#fff'
+                        paused={false}
+                        style={{ display: 'flex' }}
+                        options={{
+                            height: 90,
+                            amplitude: 50,
+                            speed: 0.20,
+                            points: 7
+                        }}
+                    />
+                    <div className="wave_opacity">
+                        <Wave fill='#ffffff47'
+                            paused={false}
+                            style={{ display: 'flex' }}
+                            options={{
+                                height: 90,
+                                amplitude: 50,
+                                speed: 0.20,
+                                points: 7
+                            }}
+                        />
+                    </div>
+
+                </div>
+
             </div>
             <div className="book_section">
                 <div className="custom_container">
@@ -219,8 +247,24 @@ const HomePage = () => {
                 <div className="custom_container">
                     <div className="image_container">
                         <div className="image_block">
-                            <img src={wolfImg} alt="wolf-img" />
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 856.44 919.44"
+                                width="856.44"
+                                height="919.44"
+                                id="mySvg"
+                            >
+                                <defs>
+                                    <pattern id="pattern1" width="100%" height="100%">
+                                        <image href={wolfImg} className='fillIMg' x="0" y="0" width="1200" height="1200" />
+                                    </pattern>
+                                </defs>
+                                <path className="cls2 svgClone" id='path4' d="M0 227.8c0 0 42-53.4 156.5 98.4 0 0 50.3 63.1 152.2 19.6 0 0 85.5-34 21.2-218.2 0 0-31.5-120.7 102.4-111.4 25.7 1.8 124.6.7 167.1 234.3 0 0 3.2 46.5 104.7 51.3 48.9.2 94.3 25.8 55.5 162.4 0 0-38 96.4 43.1 149.4 46.3 27.4 110.1 104.2-42.3 144.2 0 0-44.4 13.2-112.7-8.4-29.7-11.4-36-7.4-74.7 29.8s-63.5 39.1-63.5 39.1-46.6 8.1-108.5-50.1c-77.6-73.1-136 66.8-140 75.8s-37.4 77.3-140 51C26.1 873.8 0 847.2 0 847.2V227.8zM298 226.9c0 33.9-22.2 65.7-52 65.7-33.5 0-64.2-28.4-64.2-62.3s22.7-64 56.2-64S298 193 298 226.9z" />
+                                <path className="cls2" id='path4' fill="url(#pattern1)" d="M0 227.8c0 0 42-53.4 156.5 98.4 0 0 50.3 63.1 152.2 19.6 0 0 85.5-34 21.2-218.2 0 0-31.5-120.7 102.4-111.4 25.7 1.8 124.6.7 167.1 234.3 0 0 3.2 46.5 104.7 51.3 48.9.2 94.3 25.8 55.5 162.4 0 0-38 96.4 43.1 149.4 46.3 27.4 110.1 104.2-42.3 144.2 0 0-44.4 13.2-112.7-8.4-29.7-11.4-36-7.4-74.7 29.8s-63.5 39.1-63.5 39.1-46.6 8.1-108.5-50.1c-77.6-73.1-136 66.8-140 75.8s-37.4 77.3-140 51C26.1 873.8 0 847.2 0 847.2V227.8zM298 226.9c0 33.9-22.2 65.7-52 65.7-33.5 0-64.2-28.4-64.2-62.3s22.7-64 56.2-64S298 193 298 226.9z" />
+
+                            </svg>
                         </div>
+
                     </div>
                     <div className="wolf_block">
                         <div className="title_wrapper">
