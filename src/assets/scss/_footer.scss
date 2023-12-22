@@ -10,14 +10,17 @@
     &::before{
         content: "";
         position: absolute;
-        top: 0;
+        top: 0px;
         height: 44px;
         width: 100%;
         background: url('../img/decor/top_cover_white.png');
         background-position: center;
-        background-repeat: no-repeat;
+        background-repeat: repeat-x;
         background-size: 100% 100%;
+        background-position-x: 0vw;
     }
+
+
     .custom_container{
         padding-top: 128px;
         padding-bottom: 128px;

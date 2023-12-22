@@ -15,9 +15,9 @@ import { BsSearch } from 'react-icons/bs';
 const EventPage = () => {
 
     const [EventName, setEventName] = useState('See Wolf');
+
     useEffect(() => {
         const element = document.getElementById('curr_container');
-
         const path = window.location.href;
         const parts = path.split("/");
         const desiredPart = parts.slice(parts.indexOf("eventPage") + 1).join("/");
