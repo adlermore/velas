@@ -52,7 +52,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Link } from 'react-router-dom';
 import Wave from 'react-wavify';
 
-
 const SellectOption = [
     { value: '1', label: '1' },
     { value: '2', label: '2' },
@@ -66,7 +65,12 @@ const HomePage = () => {
 
     const [animeLine, setanimeLine] = useState(0);
     const [startDate, setStartDate] = useState(new Date());
-
+    let [waveDate, setwaveDate] = useState({
+        height: 90,
+        amplitude: 50,
+        speed: 0.20,
+        points: 7
+    });
     const porstRef = useRef(null);
     const videoRef = useRef(null);
     const callRef = useRef(null);
@@ -84,10 +88,34 @@ const HomePage = () => {
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
+        window.addEventListener('resize', updateSize);
+
+        function updateSize() {
+            if (window.innerWidth < 991 && waveDate.points > 6) {
+                console.log('log 1');
+                setwaveDate({
+                    ...waveDate,
+                    amplitude: 30,
+                    points: 3
+                })
+            } else if (window.innerWidth > 991 && waveDate.points < 5) {
+                console.log('log 2');
+                setwaveDate({
+                    height: 90,
+                    amplitude: 50,
+                    speed: 0.20,
+                    points: 7
+                })
+            }
+        }
+
+        updateSize();
+
         return () => {
             window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener('resize', updateSize);
         };
-    }, []);
+    }, [waveDate]);
 
     const { register, handleSubmit, control, formState: { errors } } = useForm({
         shouldFocusError: false,
@@ -187,14 +215,9 @@ const HomePage = () => {
                     <Wave fill='#fff'
                         paused={false}
                         style={{ display: 'flex' }}
-                        options={{
-                            height: 90,
-                            amplitude: 50,
-                            speed: 0.20,
-                            points: 7
-                        }}
+                        options={waveDate}
                     />
-                    <div className="wave_opacity">
+                    {/* <div className="wave_opacity">
                         <Wave fill='#ffffff47'
                             paused={false}
                             style={{ display: 'flex' }}
@@ -205,7 +228,7 @@ const HomePage = () => {
                                 points: 7
                             }}
                         />
-                    </div>
+                    </div> */}
 
                 </div>
 
@@ -372,7 +395,7 @@ const HomePage = () => {
                         {/* <div className="image_block">
                             <img src={onboardImg} alt="wolf-img" />
                         </div> */}
-                         <div className="image_block">
+                        <div className="image_block">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 856.44 919.44"
@@ -384,7 +407,7 @@ const HomePage = () => {
                                     <pattern id="pattern2" width="100%" height="100%">
                                         <image href={onboardImg} className='fillIMg2' x="0" y="0" width="1200" height="1200" />
                                     </pattern>
-                                </defs> 
+                                </defs>
                                 <path className="cls2" id='path1' fill="url(#pattern2)" d="M737.23 202.28c-18.72 20.75-60.32 78.42-87.06 86.57s-59.58 7.57-78.2-13.27c-23.64-26.45-11.9-68.84-24.94-101.83a71.38 71.38 0 00-50.24-42.7c-28.46-6.21-59 5.55-86.91-2.62-32.35-9.45-51.15-41.82-73.76-66.81-17.45-19.29-39.43-35.52-64.82-41.2s-54.38.74-71.52 20.32c-26.59 30.37-16 75.46-19.52 116.58a115.47 115.47 0 01-6.21 30.28c-14.27 38.88-53.69 61.26-85.13 88.23-20.29 17.4-38.35 38.3-47.95 63.26s-9.8 54.41 3.84 77.41c12.06 20.34 34 34.78 40.92 57.39 10.08 32.88-15.28 64.64-33.32 93.91C29.52 605 18.68 640.23 17.62 683.85c-.83 34 6 69.56 26.83 96.53S101 818.82 134.6 813.21c89.59-15 111.72-63.73 145.43-90.87s96.51-66.34 182.33 3.27c217.13 176.15 374.78-35.05 394.08-62.84V211.27C829.25 177.2 785.17 149.14 737.23 202.28ZM369.62 733.93a80.28 80.28 0 00-9.95.43c-23.11 2.44-46.11 14.86-56.57 35.6C292 792 297.59 821 315.39 838.15c35.28 34 90.4 14.08 107.63-28.17 7.21-17.69 6-39.28-5.53-54.48C406.5 741 388 734.3 369.62 733.93Z" />
                             </svg>
                         </div>
