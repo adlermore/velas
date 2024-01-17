@@ -2250,3 +2250,50 @@
     }
 
 }
+
+
+
+
+.example{
+    height: 500px;
+    width: 100%;
+    // background: url('../../img/example.svg') ;
+    .opacitySvg{
+        opacity: 0.5;
+    }
+}
+
+
+
+#mySvg #path5 {
+   
+    position: relative;
+    z-index: 99999999999;
+    opacity: 1;
+}
+
+#mySvg #path6 {
+    opacity: 0.5;
+    stroke-width: 20px;
+    fill: transparent;
+    stroke: #fff;
+    animation: draw852 4s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes draw852 {
+  0% {
+    opacity: 0.5;
+    stroke-width: 20px;
+  }
+
+  50% {
+    opacity: 0;
+    stroke-width: 0px;
+  }
+
+  100% {
+    opacity: 0.5;
+    stroke-width: 20px;
+  }
+}
