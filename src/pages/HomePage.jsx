@@ -713,7 +713,7 @@ const HomePage = () => {
                         <span className='number-span'>+44(0)2380457733</span>
                     </a>
                 </div>
-            </div>
+            </div>rr
             <div className="travel_section" id="itinerary">
                 <div className="custom_container">
                     <div className="title_wrapper center_mode">
@@ -768,7 +768,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <div className="contacts_section" id="contacts">
+            <div className="contacts_section" id="contact">
                 <div className="custom_container">
                     <div className="contacts_inline">
                         <div className="contacts_inner">
