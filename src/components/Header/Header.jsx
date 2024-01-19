@@ -65,7 +65,11 @@ const Header = () => {
         e.preventDefault();
         const element = document.getElementById(sectionName);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            element.scrollIntoView({block: "center", behavior: 'smooth' });
+            if (document.body.classList.contains('menu-opened')) {
+                setOpen(false);
+                document.body.classList.remove('menu-opened')
+            }
         }
     }
 
@@ -85,6 +89,7 @@ const Header = () => {
                                 </div>
                                 <ul className="header_list">
                                     <li><a onClick={(e)=>{scrollView(e,'home')}} href="/#">Home</a></li>
+                                      <li><a onClick={(e)=>{scrollView(e,'about')}} href="/#">About</a></li>
                                     <li><a onClick={(e)=>{scrollView(e,'ports')}} href="/#">Ports</a></li>
                                     <li><a onClick={(e)=>{scrollView(e,'amenities')}} href="/#">Amenities</a></li>
                                     <li><a onClick={(e)=>{scrollView(e,'calendar')}} href="/#">Calendar</a></li>

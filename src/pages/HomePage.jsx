@@ -187,6 +187,23 @@ const HomePage = () => {
                 </div>
 
             </div>
+            <div className="about_section" id="about">
+                <div className="custom_container">
+                    <div className="title_wrapper center_mode">
+                        <div className="section_title">About Velas</div>
+                        <div className="main_title">About Us</div>
+                        <div className="background_title">about</div>
+                    </div>
+                    <div className="about_description">
+                        Yachting, a luxurious maritime pursuit, blends the excitement of sailing with onboard opulence. Sleek designs and cutting-edge technology define these vessels, providing a floating haven for comfort and adventure. Beyond sailing, yachting embodies a sophisticated lifestyle, fostering social connections among crew and passengers.
+                        <br /><br />
+                        Destinations for yachting span the globe, from the Mediterranean's idyllic islands to the glamorous French Riviera and the exotic waters of the Caribbean. Yachting isn't just a leisure activity; it's a global exploration of breathtaking landscapes and diverse cultures.
+                        <br />
+                        <br />
+                        Yachting also boasts competitive races like the prestigious America's Cup, showcasing the pinnacle of maritime skill and vessel technology. In essence, yachting is more than a hobby; it's an elegant fusion of performance, luxury, and the allure of the open sea.
+                    </div>
+                </div>
+            </div>
             <div className="book_section" id="calendar">
                 <div className="custom_container">
                     <div className="title_wrapper center_mode">

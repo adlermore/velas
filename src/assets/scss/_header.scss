@@ -4,7 +4,7 @@
 .page_header {
     position: absolute;
     margin: 0 auto;
-    z-index: 10;
+    z-index: 9999999999;
     width: 100%;
     transition: 0.3s transform;
     transform: translateY(-100%);

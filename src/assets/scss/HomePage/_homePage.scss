@@ -1462,6 +1462,11 @@
 
 
 @media (max-width: 1440px) {
+    .about_section{
+        margin-bottom: 80px;
+        position: relative;
+        top: -140px;
+    }
     .main_slider .slick-slider {
         .content_title {
             font-size: 8rem;
@@ -2264,11 +2269,22 @@
 }
 
 
+.about_section{
+    margin-bottom: 120px;
+    position: relative;
+    top: -100px;
+    .about_description{
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: center;
+    }
+}
+
 
 #mySvg #path5 {
    
     position: relative;
-    z-index: 99999999999;
+    z-index: 9;
     opacity: 1;
 }
 
