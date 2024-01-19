@@ -61,6 +61,14 @@ const Header = () => {
         }
     }
 
+    const scrollView = (e , sectionName) => {
+        e.preventDefault();
+        const element = document.getElementById(sectionName);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
     return (
         <header ref={headerRef} className="page_header header_center_mode">
             <div className="header_inner">
@@ -76,15 +84,15 @@ const Header = () => {
                                     <img src={menuImg} alt="menu_img" />
                                 </div>
                                 <ul className="header_list">
-                                    <li><a href="/#">Home</a></li>
-                                    <li><a href="/#">Ports</a></li>
-                                    <li><a href="/#">Amenities</a></li>
-                                    <li><a href="/#">Calendar</a></li>
-                                    <li><a href="/#">Gallery</a></li>
-                                    <li><a href="/#">Reviews</a></li>
-                                    <li><a href="/#">Itinerary</a></li>
-                                    <li><a href="/#">Contact</a></li>
-                                    <li><a href="/#">Fleet</a></li>
+                                    <li><a onClick={(e)=>{scrollView(e,'home')}} href="/#">Home</a></li>
+                                    <li><a onClick={(e)=>{scrollView(e,'ports')}} href="/#">Ports</a></li>
+                                    <li><a onClick={(e)=>{scrollView(e,'amenities')}} href="/#">Amenities</a></li>
+                                    <li><a onClick={(e)=>{scrollView(e,'calendar')}} href="/#">Calendar</a></li>
+                                    <li><a onClick={(e)=>{scrollView(e,'gallery')}} href="/#">Gallery</a></li>
+                                    <li><a onClick={(e)=>{scrollView(e,'reviews')}} href="/#">Reviews</a></li>
+                                    <li><a onClick={(e)=>{scrollView(e,'itinerary')}} href="/#">Itinerary</a></li>
+                                    <li><a onClick={(e)=>{scrollView(e,'contact')}} href="/#">Contact</a></li>
+                                    <li><a onClick={(e)=>{scrollView(e,'fleet')}} href="/#">Fleet</a></li>
                                 </ul>
                                 <a href="/#" className="call_btn"><FaPhone /></a>
                             </div>

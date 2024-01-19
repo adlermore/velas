@@ -153,7 +153,7 @@ const HomePage = () => {
 
     return (
         <div className='home-wrapper'>
-            <div className="main_slider">
+            <div className="main_slider" id="home">
                 <Slider {...settings}>
                     <div className='slider_container'>
                         <div className="slider_background">
@@ -187,7 +187,7 @@ const HomePage = () => {
                 </div>
 
             </div>
-            <div className="book_section">
+            <div className="book_section" id="calendar">
                 <div className="custom_container">
                     <div className="title_wrapper center_mode">
                         <div className="section_title">PLAN YOUR HOLIDAY</div>
@@ -236,8 +236,8 @@ const HomePage = () => {
                                         <image href={wolfImg} className='fillIMg' x="0" y="0" width="1200" height="1200" />
                                     </pattern>
                                 </defs>
-                                <path xmlns="http://www.w3.org/2000/svg" class="cls2" id="path5" fill="url(#pattern1)" d="M0 227.8c0 0 42-53.4 156.5 98.4 0 0 50.3 63.1 152.2 19.6 0 0 85.5-34 21.2-218.2 0 0-31.5-120.7 102.4-111.4 25.7 1.8 124.6.7 167.1 234.3 0 0 3.2 46.5 104.7 51.3 48.9.2 94.3 25.8 55.5 162.4 0 0-38 96.4 43.1 149.4 46.3 27.4 110.1 104.2-42.3 144.2 0 0-44.4 13.2-112.7-8.4-29.7-11.4-36-7.4-74.7 29.8s-63.5 39.1-63.5 39.1-46.6 8.1-108.5-50.1c-77.6-73.1-136 66.8-140 75.8s-37.4 77.3-140 51C26.1 873.8 0 847.2 0 847.2V227.8zM298 226.9c0 33.9-22.2 65.7-52 65.7-33.5 0-64.2-28.4-64.2-62.3s22.7-64 56.2-64S298 193 298 226.9z" />
-                                <path xmlns="http://www.w3.org/2000/svg" class="cls2" id="path6" d="m 0 230 c 0 0 42 -53.4 156.5 98.4 c 0 0 50.3 63.1 152.2 19.6 c 0 0 85.5 -34 21.2 -218.2 c 0 0 -31.5 -120.7 102.4 -111.4 c 25.7 1.8 124.6 0.7 167.1 234.3 c 0 0 3.2 46.5 104.7 51.3 c 48.9 0.2 94.3 25.8 55.5 162.4 c 0 0 -38 96.4 43.1 149.4 c 46.3 27.4 110.1 104.2 -42.3 144.2 c 0 0 -44.4 13.2 -112.7 -8.4 c -29.7 -11.4 -36 -7.4 -74.7 29.8 s -63.5 39.1 -63.5 39.1 s -46.6 8.1 -108.5 -50.1 c -77.6 -73.1 -136 66.8 -140 75.8 s -37.4 77.3 -140 51 c -94.9 -23.4 -121 -50 -121 -50 v -619.4 z m 298 -5 c 0 33.9 -22.2 65.7 -52 65.7 c -33.5 0 -64.2 -28.4 -64.2 -62.3 s 22.7 -64 56.2 -64 s 50 19.6 60 50.6 z" />
+                                <path xmlns="http://www.w3.org/2000/svg" className="cls2" id="path5" fill="url(#pattern1)" d="M0 227.8c0 0 42-53.4 156.5 98.4 0 0 50.3 63.1 152.2 19.6 0 0 85.5-34 21.2-218.2 0 0-31.5-120.7 102.4-111.4 25.7 1.8 124.6.7 167.1 234.3 0 0 3.2 46.5 104.7 51.3 48.9.2 94.3 25.8 55.5 162.4 0 0-38 96.4 43.1 149.4 46.3 27.4 110.1 104.2-42.3 144.2 0 0-44.4 13.2-112.7-8.4-29.7-11.4-36-7.4-74.7 29.8s-63.5 39.1-63.5 39.1-46.6 8.1-108.5-50.1c-77.6-73.1-136 66.8-140 75.8s-37.4 77.3-140 51C26.1 873.8 0 847.2 0 847.2V227.8zM298 226.9c0 33.9-22.2 65.7-52 65.7-33.5 0-64.2-28.4-64.2-62.3s22.7-64 56.2-64S298 193 298 226.9z" />
+                                <path xmlns="http://www.w3.org/2000/svg" className="cls2" id="path6" d="m 0 230 c 0 0 42 -53.4 156.5 98.4 c 0 0 50.3 63.1 152.2 19.6 c 0 0 85.5 -34 21.2 -218.2 c 0 0 -31.5 -120.7 102.4 -111.4 c 25.7 1.8 124.6 0.7 167.1 234.3 c 0 0 3.2 46.5 104.7 51.3 c 48.9 0.2 94.3 25.8 55.5 162.4 c 0 0 -38 96.4 43.1 149.4 c 46.3 27.4 110.1 104.2 -42.3 144.2 c 0 0 -44.4 13.2 -112.7 -8.4 c -29.7 -11.4 -36 -7.4 -74.7 29.8 s -63.5 39.1 -63.5 39.1 s -46.6 8.1 -108.5 -50.1 c -77.6 -73.1 -136 66.8 -140 75.8 s -37.4 77.3 -140 51 c -94.9 -23.4 -121 -50 -121 -50 v -619.4 z m 298 -5 c 0 33.9 -22.2 65.7 -52 65.7 c -33.5 0 -64.2 -28.4 -64.2 -62.3 s 22.7 -64 56.2 -64 s 50 19.6 60 50.6 z" />
                             </svg>
                         </div>
 
@@ -301,7 +301,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <div className="ports_section" ref={porstRef}>
+            <div className="ports_section" ref={porstRef} id="ports">
                 <div className="custom_container">
                     <div className="title_wrapper center_mode">
                         <div className="section_title">DESTINATIONS</div>
@@ -326,7 +326,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <div className="onboard_section">
+            <div className="onboard_section" id="amenities">
                 <div className="custom_container">
                     <div className="board_block">
                         <div className="title_wrapper">
@@ -413,7 +413,7 @@ const HomePage = () => {
                     </ul>
                 </div>
             </div>
-            <div className="gallery_section">
+            <div className="gallery_section" id="gallery">
                 <div className="custom_container">
                     <div className="title_wrapper center_mode">
                         <div className="section_title">TAKE A LOOK</div>
@@ -456,7 +456,7 @@ const HomePage = () => {
                     </Fancybox>
                 </div>
             </div>
-            <div className="reviews_section">
+            <div className="reviews_section" id="reviews">
                 <div className="custom_container">
                     <div className="title_wrapper center_mode">
                         <div className="section_title">VELAS EXPERIENCE</div>
@@ -697,7 +697,7 @@ const HomePage = () => {
                     </a>
                 </div>
             </div>
-            <div className="travel_section">
+            <div className="travel_section" id="itinerary">
                 <div className="custom_container">
                     <div className="title_wrapper center_mode">
                         <div className="section_title">BOOK TODAY</div>
@@ -751,7 +751,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <div className="contacts_section">
+            <div className="contacts_section" id="contacts">
                 <div className="custom_container">
                     <div className="contacts_inline">
                         <div className="contacts_inner">
@@ -869,7 +869,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <div className="fleet_section">
+            <div className="fleet_section" id="fleet">
                 <div className="custom_container">
                     <div className="title_wrapper center_mode">
                         <div className="section_title">OUR FLEET</div>
